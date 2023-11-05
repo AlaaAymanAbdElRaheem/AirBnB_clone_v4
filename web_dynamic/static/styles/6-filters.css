@@ -40,6 +40,10 @@ button:hover {
     margin-top: 0;
     font-weight: 400;
     font-size: 14px;
+    height: fit-content;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .locations {
     height: 100%;
@@ -106,8 +110,6 @@ button:hover {
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    text-overflow: ellipsis;
-    overflow: hidden;
 }
 .amenities_h4 {
     text-overflow: ellipsis;
