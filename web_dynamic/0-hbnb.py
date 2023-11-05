@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Starts a Flash Web Application """
+""" Starts the web application """
 from models import storage
 from models.state import State
 from models.city import City
@@ -21,13 +21,13 @@ def close_db(error):
 
 @app.route('/0-hbnb', strict_slashes=False)
 def hbnb():
-    """ HBNB is alive! """
+    """ HBNB main route API """
     states = storage.all(State).values()
     states = sorted(states, key=lambda k: k.name)
-    st_ct = []
+    state_cities = []
 
     for state in states:
-        st_ct.append([state, sorted(state.cities, key=lambda k: k.name)])
+        state_cities.append([state, sorted(state.cities, key=lambda k: k.name)])
 
     amenities = storage.all(Amenity).values()
     amenities = sorted(amenities, key=lambda k: k.name)
@@ -36,7 +36,7 @@ def hbnb():
     places = sorted(places, key=lambda k: k.name)
 
     return render_template('0-hbnb.html',
-                           states=st_ct,
+                           states=state_cities,
                            amenities=amenities,
                            places=places,
                            cache_id=uuid.uuid4())

@@ -101,3 +101,17 @@ button:hover {
 .locations:hover .popover {
     visibility: visible;
 }
+.amenity-checkbox {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.amenities_h4 {
+    text-overflow: ellipsis;
+}
+.checked {
+    text-overflow: ellipsis;
+}
